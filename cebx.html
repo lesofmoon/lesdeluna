@@ -1,0 +1,651 @@
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cebuana Xpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+ 
+    
+    
+    <style>
+        .back-button {
+            text-decoration: none;
+            text-align: left;
+            padding-bottom: 40px;
+            display: flex;
+        }
+            
+
+        .back-button:hover {
+           color: #6C7276 !important;
+        }
+
+      
+        
+
+
+     
+
+
+        .custom-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white; /* Ensures solid white background */
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    opacity: 1; /* Ensures full visibility */
+}
+
+
+
+
+    .custom-carousel-btn:hover {
+        background-color: #F3F3F3;
+    }
+
+    .carousel-control-prev {
+        left: 0;
+    }
+
+    .carousel-control-next {
+        right: 0;
+    }
+
+    .carousel-control-icon {
+        width: 24px;
+        height: 24px;
+        color: black;
+    }
+
+    .slider-desktop, .slider-mobile {
+        display: flex;
+        
+    }
+
+  
+
+
+    @media (max-width: 768px) {
+        .carousel-inner .carousel-item .d-md-none {
+            display: block !important;
+            text-align: center;
+        }
+        .carousel-inner .carousel-item .d-md-none img {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+        .carousel-inner .carousel-item .d-none.d-md-flex {
+            display: none !important;
+        }
+        .slider-section-title {
+        text-align: center;
+    }
+    }
+
+
+
+  .carousel-item {
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.carousel-item-next {
+    transform: translateX(100%);
+}
+
+.carousel-item-prev {
+    transform: translateX(-100%);
+}
+
+.active.carousel-item-start,
+.active.carousel-item-end {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+
+
+
+
+
+   
+
+   
+
+
+
+
+
+
+    
+
+        
+    </style>
+    
+    
+
+</head>
+<body>
+    
+ 
+    <nav class="navbar navbar-expand-lg bg-white fixed-top py-3">
+        <div class="container custom-container">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="img/logo.svg" alt="Logo" width="24" height="24" class="me-2">
+                <span>Les de Luna</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" id="menuToggle">
+    <img src="img/borger6.png" id="menuIcon" alt="Menu Icon" width="24" height="24" />
+</button>
+            
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="home.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item menu-spacing"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </nav>
+    
+    
+    
+   <!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <a class="active" href="home.html">Work</a>
+    <a href="about.html">Contact</a>
+    <a href="contact.html">About</a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a>
+
+
+<!-- Footer icons at the bottom of the mobile menu -->
+<div class="footer-icons">
+    <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+        <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+    </a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+        <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+    </a>
+    <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+        <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+    </a>
+    <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+        <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+    </a>
+</div>
+
+
+</div>
+
+    
+
+
+   
+<!-- Hero Section -->
+<section class="container custom-container py-5 mt-5">
+    <a href="home.html" class="btn-link text-dark back-button"><img src="img/back-arrow.svg">&nbsp;Go back</a> 
+    <div class="row align-items-center">
+        <!-- Left Column -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="fw-bold">Cebuana Xpress</h2>
+            <p class="lead">A financial app for online jewelry pawning, it provides jewelry pawn price estimation, door-to-door pawning services, online pawn renewal, and redemption. Additionally, it offers other services such as bill payments, remittances, electronic load purchases, and more. <br> <br> Led the team in refining user requirements through various user research methods, identified solutions by mapping the customer journey, and applied these insights to the designs. Ensured continuous iteration based on feedback from actual users.</p>
+
+
+            <div class="mt-4">
+                <a href="library.html" target="_parent" class="btn btn-dark btn-lg">Pattern Library</a>
+            </div>
+
+        </div>
+
+        <!-- Right Column (Image) -->
+        <div class="col-lg-6 d-flex justify-content-center">
+            <img src="img/cebx/home.png" alt="Hero Image" class="img-fluid">
+        </div>
+    </div>
+</section>
+
+
+
+<br><br>
+
+
+<!-- Reusable Slider Section -->
+<section class="container custom-container py-5 mt-5 slider-section">
+    <h2 class="slider-section-title">Pawning</h2><br>
+    
+    <div class="carousel slide" data-bs-ride="false"> 
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-none d-md-flex d-lg-flex justify-content-between slider-desktop"></div>
+                <div class="d-md-none d-lg-none text-center slider-mobile"></div>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-control-prev custom-carousel-btn" type="button" onclick="prevSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/previous.svg" alt="Left Arrow" width="24" height="24">
+            </span>
+        </button>
+        
+        <button class="carousel-control-next custom-carousel-btn" type="button" onclick="nextSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/next.svg" alt="Right Arrow" width="24" height="24">
+            </span>
+        </button>
+
+
+    </div>
+</section>
+
+<!-- Reusable Slider Section -->
+<section class="container custom-container py-5 mt-5 slider-section">
+    <h2 class="slider-section-title">Bills Payment</h2><br>
+    
+    <div class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-none d-md-flex d-lg-flex justify-content-between slider-desktop"></div>
+                <div class="d-md-none d-lg-none text-center slider-mobile"></div>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-control-prev custom-carousel-btn" type="button" onclick="prevSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/previous.svg" alt="Left Arrow" width="24" height="24">
+            </span>
+        </button>
+        
+        <button class="carousel-control-next custom-carousel-btn" type="button" onclick="nextSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/next.svg" alt="Right Arrow" width="24" height="24">
+            </span>
+        </button>
+
+
+    </div>
+</section>
+
+
+
+<!-- Reusable Slider Section -->
+<section class="container custom-container py-5 mt-5 slider-section">
+    <h2 class="slider-section-title">Remittance</h2><br>
+    
+    <div class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-none d-md-flex d-lg-flex justify-content-between slider-desktop"></div>
+                <div class="d-md-none d-lg-none text-center slider-mobile"></div>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-control-prev custom-carousel-btn" type="button" onclick="prevSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/previous.svg" alt="Left Arrow" width="24" height="24">
+            </span>
+        </button>
+        
+        <button class="carousel-control-next custom-carousel-btn" type="button" onclick="nextSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/next.svg" alt="Right Arrow" width="24" height="24">
+            </span>
+        </button>
+
+
+    </div>
+</section>
+
+
+
+<!-- Reusable Slider Section -->
+<section class="container custom-container py-5 mt-5 slider-section">
+    <h2 class="slider-section-title">Cash In</h2><br>
+    
+    <div class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-none d-md-flex d-lg-flex justify-content-between slider-desktop"></div>
+                <div class="d-md-none d-lg-none text-center slider-mobile"></div>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-control-prev custom-carousel-btn" type="button" onclick="prevSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/previous.svg" alt="Left Arrow" width="24" height="24">
+            </span>
+        </button>
+        
+        <button class="carousel-control-next custom-carousel-btn" type="button" onclick="nextSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/next.svg" alt="Right Arrow" width="24" height="24">
+            </span>
+        </button>
+
+
+    </div>
+</section>
+
+
+
+<!-- Reusable Slider Section -->
+<section class="container custom-container py-5 mt-5 slider-section">
+    <h2 class="slider-section-title">Account Verification</h2><br>
+    
+    <div class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-none d-md-flex d-lg-flex justify-content-between slider-desktop"></div>
+                <div class="d-md-none d-lg-none text-center slider-mobile"></div>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-control-prev custom-carousel-btn" type="button" onclick="prevSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/previous.svg" alt="Left Arrow" width="24" height="24">
+            </span>
+        </button>
+        
+        <button class="carousel-control-next custom-carousel-btn" type="button" onclick="nextSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/next.svg" alt="Right Arrow" width="24" height="24">
+            </span>
+        </button>
+
+
+    </div>
+</section>
+
+
+
+<!-- Reusable Slider Section -->
+<section class="container custom-container py-5 mt-5 slider-section">
+    <h2 class="slider-section-title">Google Play Store Screenshots</h2><br>
+    
+    <div class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-none d-md-flex d-lg-flex justify-content-between slider-desktop"></div>
+                <div class="d-md-none d-lg-none text-center slider-mobile"></div>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-control-prev custom-carousel-btn" type="button" onclick="prevSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/previous.svg" alt="Left Arrow" width="24" height="24">
+            </span>
+        </button>
+        
+        <button class="carousel-control-next custom-carousel-btn" type="button" onclick="nextSlide(this)">
+            <span class="carousel-control-icon">
+                <img src="img/next.svg" alt="Right Arrow" width="24" height="24">
+            </span>
+        </button>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+
+
+
+<!-- Footer -->
+<footer class="bg-light" style="background-color: #F9F9F9; padding-top: 80px; padding-bottom: 40px;">
+    <div class="container text-center">
+        <div class="d-flex justify-content-center">
+            <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+                <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+            </a>
+            <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+                <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+            </a>
+            <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+                <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+            </a>
+            <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+                <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+            </a>
+        </div>
+    </div>
+</footer>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+<!-- Scroll to Top Button -->
+
+<script>
+    function initializeSlider(section, images) {
+        let desktopContainer = section.querySelector(".slider-desktop");
+        let mobileContainer = section.querySelector(".slider-mobile");
+        let currentIndex = 0;
+        let visibleImages = window.innerWidth < 992 ? 1 : 4;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        function updateSlider() {
+            desktopContainer.innerHTML = "";
+            mobileContainer.innerHTML = "";
+
+            for (let i = 0; i < visibleImages; i++) {
+                let img = document.createElement("img");
+                img.src = images[(currentIndex + i) % images.length];
+                img.className = "img-fluid";
+                desktopContainer.appendChild(img);
+            }
+
+            let mobileImg = document.createElement("img");
+            mobileImg.src = images[currentIndex];
+            mobileImg.className = "img-fluid w-auto";
+            mobileContainer.appendChild(mobileImg);
+        }
+
+        section.querySelector(".carousel-control-next").addEventListener("click", function () {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlider();
+        });
+
+        section.querySelector(".carousel-control-prev").addEventListener("click", function () {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlider();
+        });
+
+        section.addEventListener("touchstart", function (event) {
+            touchStartX = event.touches[0].clientX;
+        });
+
+        section.addEventListener("touchend", function (event) {
+            touchEndX = event.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX) {
+                currentIndex = (currentIndex + 1) % images.length;
+            } else if (touchEndX > touchStartX) {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+            }
+            updateSlider();
+        }
+
+        window.addEventListener("resize", function () {
+            visibleImages = window.innerWidth < 992 ? 1 : 4;
+            updateSlider();
+        });
+
+        updateSlider();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let sliders = document.querySelectorAll(".slider-section");
+        let sliderData = [
+            ["img/cebx/pawning/pawn1.png", "img/cebx/pawning/pawn2.png", "img/cebx/pawning/pawn3.png", "img/cebx/pawning/pawn4.png", "img/cebx/pawning/pawn5.png", "img/cebx/pawning/pawn6.png", "img/cebx/pawning/pawn7.png", "img/cebx/pawning/pawn8.png", "img/cebx/pawning/pawn9.png", "img/cebx/pawning/pawn10.png", "img/cebx/pawning/pawn11.png", "img/cebx/pawning/pawn12.png", "img/cebx/pawning/pawn13.png", "img/cebx/pawning/pawn14.png", "img/cebx/pawning/pawn15.png", "img/cebx/pawning/pawn16.png", "img/cebx/pawning/pawn17.png", "img/cebx/pawning/pawn18.png", "img/cebx/pawning/pawn19.png"],
+            ["img/cebx/bills/bills1.png", "img/cebx/bills/bills2.png", "img/cebx/bills/bills3.png", "img/cebx/bills/bills4.png", "img/cebx/bills/bills5.png", "img/cebx/bills/bills6.png", "img/cebx/bills/bills7.png", "img/cebx/bills/bills8.png"],
+            ["img/cebx/send/send1.png", "img/cebx/send/send2.png", "img/cebx/send/send3.png", "img/cebx/send/send4.png", "img/cebx/send/send5.png", "img/cebx/send/send6.png"],
+            ["img/cebx/cashin/cashin1.png", "img/cebx/cashin/cashin2.png", "img/cebx/cashin/cashin3.png", "img/cebx/cashin/cashin4.png", "img/cebx/cashin/cashin1.png", "img/cebx/cashin/cashin5.png", "img/cebx/cashin/cashin6.png", "img/cebx/cashin/cashin7.png", "img/cebx/cashin/cashin8.png", "img/cebx/cashin/cashin9.png"],
+            ["img/cebx/kyc/kyc1.png", "img/cebx/kyc/kyc2.png", "img/cebx/kyc/kyc3.png", "img/cebx/kyc/kyc4.png", "img/cebx/kyc/kyc5.png", "img/cebx/kyc/kyc6.png", "img/cebx/kyc/kyc7.png", "img/cebx/kyc/kyc8.png"],
+            ["img/cebx/store/store1.png", "img/cebx/store/store2.png", "img/cebx/store/store3.png", "img/cebx/store/store4.png", "img/cebx/store/store5.png"]
+        ];
+
+        sliders.forEach((section, index) => {
+            initializeSlider(section, sliderData[index]);
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".laptop-mockup-section").forEach((section) => {
+            let mockupCarousel = section.querySelector(".carousel-inner");
+            let mockupItems = mockupCarousel.querySelectorAll(".carousel-item");
+            let prevButton = section.querySelector(".carousel-control-prev");
+            let nextButton = section.querySelector(".carousel-control-next");
+            let currentIndex = 0;
+
+            function updateMockup() {
+                mockupItems.forEach((item, index) => {
+                    item.classList.toggle("active", index === currentIndex);
+                });
+            }
+
+            prevButton.addEventListener("click", function () {
+                currentIndex = (currentIndex - 1 + mockupItems.length) % mockupItems.length;
+                updateMockup();
+            });
+
+            nextButton.addEventListener("click", function () {
+                currentIndex = (currentIndex + 1) % mockupItems.length;
+                updateMockup();
+            });
+        });
+    });
+
+
+
+
+
+
+ // SWIPING GESTURE DESKTOP START //
+    document.addEventListener("DOMContentLoaded", function () {
+    let laptopMockupSections = document.querySelectorAll(".laptop-mockup-carousel");
+
+    laptopMockupSections.forEach(carousel => {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener("touchstart", function (event) {
+            touchStartX = event.touches[0].clientX;
+        });
+
+        carousel.addEventListener("touchend", function (event) {
+            touchEndX = event.changedTouches[0].clientX;
+            handleSwipe(carousel);
+        });
+
+        function handleSwipe(carousel) {
+            if (touchEndX < touchStartX) {
+                // Swipe left → Move to next slide
+                carousel.querySelector(".carousel-control-next").click();
+            } else if (touchEndX > touchStartX) {
+                // Swipe right → Move to previous slide
+                carousel.querySelector(".carousel-control-prev").click();
+            }
+        }
+    });
+});
+// SWIPING GESTURE DESKTOP END //
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

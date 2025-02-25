@@ -1,0 +1,508 @@
+html {
+    overflow-y: scroll;
+}
+
+
+.custom-container {
+    max-width: 1220px;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+
+
+body {
+    padding-top: 30px; /* Adjust based on your navbar height */
+    background-color: #F9F9F9;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-size: medium;
+
+}
+
+.btn {
+    border-radius: 0%;
+    padding-left: 50px; padding-right: 50px;
+}
+
+
+
+
+
+/* CONTAINER PADDING START */
+@media (max-width: 1200px) { /* Adjust for laptop screens and below */
+    .custom-container {
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+    }
+  }
+  
+  @media (max-width: 768px) { /* Tablet screens */
+    .custom-container {
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+    }
+  }
+  
+  @media (max-width: 576px) { /* Mobile screens */
+    .custom-container {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+  /* CONTAINER PADDING END */
+  
+
+
+
+
+
+
+.nav-item + .nav-item {
+    margin-left: 20px;
+}
+.card {
+    border: none;
+    box-shadow: none !important;
+}
+.card-body {
+    text-align: left;
+    background-color: #F9F9F9;
+   
+}
+
+.card img {
+    border-radius: 4px; /* Ensures the image follows the same border radius */
+    width: 100%;
+    height: auto;
+    min-height: 200px; /* Adjust this based on your layout */
+}
+
+
+.intro-text {
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+body, .card-text, .card-title, .nav-link {
+    color: #3C3B3B !important;
+   
+}
+.navbar-brand img {
+    margin-right: 50px;
+}
+.card-title a, .card a {
+    text-decoration: none;
+    color: #3C3B3B !important;
+}
+.card-title a:hover, .card a:hover, .nav-link:hover {
+    color: #47769B !important;
+}
+
+
+
+
+/* !!!!! NAVIGATION BAR START !!!!! */
+
+/* Scroll-to-top button styles */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #3C3B3B;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Show button on scroll */
+  .scroll-to-top.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Hide button */
+  .scroll-to-top.hide {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  
+  /* Hover effect */
+  .scroll-to-top:hover {
+    background-color: #555;
+  }
+  
+  /* Scroll-to-top button styles */
+
+
+/* Card Image Animations */
+  .move-up-img {
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .move-up-img:hover {
+        transform: translateY(-5px);
+    }
+/* END Card Image Animations */
+
+
+/* NAV HEADER */
+
+.navbar {
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            
+            
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect when scrolled */
+        }
+
+        /* This applies when the navbar is at the top (no shadow) */
+        .navbar:not(.scrolled) {
+            box-shadow: none; /* Ensure no shadow when not scrolled */
+        }
+        
+        .menu-spacing {
+            margin-right: 30px;
+        }
+            
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #F9F9F9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            color: #3C3B3B;
+        }
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-menu a {
+            color: white;
+            font-size: 24px;
+            margin: 15px 0;
+            text-decoration: none;
+        }
+
+
+        #menuToggle {
+    position: relative;
+    z-index: 1100;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: line-through;
+    
+}
+
+
+.mobile-menu a.active {
+    font-weight: bold;
+    text-decoration: line-through;
+    color: #000; /* Optional: Ensure it stands out */
+}
+
+
+
+/* END NAV HEADER */
+
+
+/* Mobile menu styles */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100vw; /* Initially hidden off-screen to the left */
+    width: 100vw;
+    height: 100vh;
+    background: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-out; /* Snappy transition */
+    z-index: 1050;
+}
+
+/* For mobile view, slide in from left to right when active */
+@media (max-width: 991px) {
+    
+   
+
+    /* Slide out effect when closing the menu (reverse of slide in) */
+    .mobile-menu.closing {
+        transform: translateX(-100vw); /* Slide out to the left */
+    }
+}
+
+.mobile-menu.active {
+    transform: translateX(100vw); /* Slide in from left to right */
+    
+ 
+    
+}
+
+/* Links inside the mobile menu */
+.mobile-menu a {
+    color: #3C3B3B;
+    font-size: 24px;
+    margin: 15px 0;
+    text-decoration: none;
+   
+}
+/* ENDMobile Menu */
+
+#menuIcon {
+    transition: all 0.3s ease;
+    font-size: 32px;
+    color: #3C3B3B; /* Ensure it's visible */
+    
+}
+
+
+#menuToggle {
+    position: relative;
+    z-index: 1100;
+    background: none;
+    border: none; /* Ensure there's no border */
+    font-size: 32px;
+    cursor: pointer;
+    outline: none; /* Remove outline when pressed */
+}
+
+
+
+#menuToggle:active,
+#menuToggle.pressed {
+    background: #86A9BA; /* Pressed state color */
+}
+
+
+#menuToggle:focus,
+#menuToggle:active,
+#menuToggle.pressed {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
+/* Position close button in the same place as the hamburger */
+.close-menu {
+    position: fixed;  /* Same positioning as #menuToggle */
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: #3C3B3B; /* Make sure it's visible */
+    cursor: pointer;
+    z-index: 1101; /* Ensures it’s above the menu */
+    display: none; /* Initially hidden */
+}
+
+/* Show close button when menu is open */
+.mobile-menu.active .close-menu {
+    display: block;
+    
+}
+
+
+/* Slide out to the left when closing */
+.mobile-menu.closing {
+    transform: translateX(-100vw); /* Slide out */
+}
+
+
+/* Hide menu icon when menu is open */
+.mobile-menu.active + #menuToggle {
+    display: none;
+    border: none; /* Remove any border if it somehow appears */
+}
+
+
+/* Ensure no outline when the hamburger icon is focused */
+#menuToggle:focus {
+    outline: none;
+}
+
+/* !!!!! NAVIGATION BAR END !!!!! */
+
+
+
+
+
+/* Hover effect for icons START */
+footer a:hover img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(42%) saturate(1413%) hue-rotate(173deg) brightness(101%) contrast(102%);
+}
+/* Hover effect for icons END */
+
+
+/* Footer Icons In The Menu Mobile START */
+.mobile-menu .footer-icons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-menu .footer-icons a {
+    margin: 10px;
+}
+/* Footer Icons In The Menu Mobile END */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!!!!! ABOUT PAGE START !!!!!*/
+
+
+    .logo-carousel {
+            display: flex;
+            width: max-content;
+            animation: slide 10s linear infinite;
+        }
+    
+        .logo-slide {
+            display: flex;
+        }
+    
+        .logo-item {
+            width: 146px;
+            height: 40px;
+            padding-left: 30px;
+        }
+    
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        .gradient-overlay {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 50px;
+        background: linear-gradient(to right, #F9F9F9, transparent);
+        z-index: 2;
+    }
+
+    .gradient-overlay.left {
+        left: 0;
+        background: linear-gradient(to right, #F9F9F9, transparent);
+    }
+
+    .gradient-overlay.right {
+        right: 0;
+        background: linear-gradient(to left, #F9F9F9, transparent);
+    }
+.slider-title {
+    text-align: center;
+    color: #3C3B3B;
+}
+
+
+
+
+
+/* More Info Styles */
+.image-container {
+        position: relative;
+        width: 100%;
+        max-width: 508px;
+    }
+    
+    .image-container img {
+        width: 100%;
+        height: auto;
+        transition: opacity 1s ease-in-out, filter 1s ease-in-out;
+    }
+    
+    .blur-transition {
+        filter: blur(10px);
+        opacity: 0;
+    }
+
+
+/* Mobile Conditions */
+@media (max-width: 991px) { /* Applies to md (tablets) and below */
+    .row.align-items-center {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .row.align-items-center .col-lg-6 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        padding: 20;
+    }
+}
+
+
+
+
+/*!!!!! ABOUT PAGE END !!!!!*/
+
+
