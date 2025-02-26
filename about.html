@@ -1,0 +1,290 @@
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+ 
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" href="img/favicon/icon1.png">
+
+<!-- For ICO format -->
+<link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+
+<!-- For Apple Touch Icons -->
+<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+
+<!-- For Different Sizes -->
+<link rel="icon" sizes="32x32" href="img/favicon/icon1.png">
+<link rel="icon" sizes="16x16" href="img/favicon/icon2.png">
+    
+    <style>
+        .rocket {
+            display: inline-block;
+            animation: floatRocket 1.5s ease-in-out infinite;
+        }
+    
+        @keyframes floatRocket {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
+    
+    
+
+</head>
+<body>
+    
+ 
+    <nav class="navbar navbar-expand-lg bg-white fixed-top py-3">
+        <div class="container custom-container">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/logo.svg" alt="Logo" width="24" height="24" class="me-2">
+                <span>Les de Luna</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" id="menuToggle">
+    <img src="img/borger5.png" id="menuIcon" alt="Menu Icon" width="24" height="24" />
+</button>
+            
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item menu-spacing"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </nav>
+    
+    
+    
+   <!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <a href="index.html">Work</a>
+    <a class="active" href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a>
+
+
+<!-- Footer icons at the bottom of the mobile menu -->
+<div class="footer-icons">
+    <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+        <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+    </a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+        <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+    </a>
+    <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+        <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+    </a>
+    <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+        <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+    </a>
+</div>
+
+
+</div>
+
+    
+
+
+   
+<!-- Hero Section -->
+<section class="container custom-container py-5 mt-5">
+    <div class="row align-items-center">
+        <!-- Left Column -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <h1 class="display-4 fw-medium">Magandang araw! <span class="rocket">🌞</span></h1><br>
+            <p class="lead">Hello, I’m Les! A UI/UX designer from Manila, Philippines. <br>
+
+                <br>I focus on a user-centric approach, striving to solve human problems in digital products to make them more efficient, easy to use, and delightful. My goal is to create products that are both visually appealing and highly functional for every type of user.<br><br>
+                
+                I have years of experience leading teams, conducting user research and interviews, working in front-end development, and meticulously designing interfaces.
+                <br><br>
+                I would be thrilled to collaborate and exchange ideas with you to create exceptional digital products!</p>
+
+
+            <div class="mt-4">
+                <a href="https://drive.google.com/drive/folders/18zPHIaPacDs82s0BmJ0sutWYzR51yx38?usp=sharing" target="_blank" class="btn btn-dark btn-lg">Resumé</a>
+            </div>
+
+        </div>
+
+        <!-- Right Column (Image) -->
+        <div class="col-lg-6 d-flex justify-content-center">
+            <img src="img/about/les-hero.png" alt="Hero Image" class="img-fluid rounded shadow-sm">
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+
+<!-- Logo Carousel Section -->
+<section class="container custom-container py-4">
+    <h4 class="slider-title">Expertise in the following tools:</h4><br>
+    <div class="overflow-hidden position-relative">
+        
+        <div class="d-flex align-items-center logo-carousel">
+            <div class="logo-slide d-flex">
+                <img src="img/about/tools/figma.svg" alt="Logo 1" class="logo-item">
+                <img src="img/about/tools/adobe.svg" alt="Logo 2" class="logo-item">
+                <img src="img/about/tools/sketch.svg" alt="Logo 3" class="logo-item">
+                <img src="img/about/tools/maze.svg" alt="Logo 4" class="logo-item">
+                <img src="img/about/tools/usertesting.svg" alt="Logo 5" class="logo-item">
+                <img src="img/about/tools/miro.svg" alt="Logo 6" class="logo-item">
+                <img src="img/about/tools/monday.svg" alt="Logo 7" class="logo-item">
+                <img src="img/about/tools/jira.svg" alt="Logo 8" class="logo-item">
+                <img src="img/about/tools/bootstrap.svg" alt="Logo 9" class="logo-item">
+                <img src="img/about/tools/flutterflow.svg" alt="Logo 10" class="logo-item">
+               
+            </div>
+            <div class="logo-slide d-flex">
+                <img src="img/about/tools/figma.svg" alt="Logo 1" class="logo-item">
+                <img src="img/about/tools/adobe.svg" alt="Logo 2" class="logo-item">
+                <img src="img/about/tools/sketch.svg" alt="Logo 3" class="logo-item">
+                <img src="img/about/tools/maze.svg" alt="Logo 4" class="logo-item">
+                <img src="img/about/tools/usertesting.svg" alt="Logo 5" class="logo-item">
+                <img src="img/about/tools/miro.svg" alt="Logo 6" class="logo-item">
+                <img src="img/about/tools/monday.svg" alt="Logo 7" class="logo-item">
+                <img src="img/about/tools/jira.svg" alt="Logo 8" class="logo-item">
+                <img src="img/about/tools/bootstrap.svg" alt="Logo 9" class="logo-item">
+                <img src="img/about/tools/flutterflow.svg" alt="Logo 10" class="logo-item">
+            </div>
+        </div>
+
+        <div class="gradient-overlay left"></div>
+        <div class="gradient-overlay right"></div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- More Info Section -->
+<section class="container custom-container py-5 mt-5">
+    <div class="row align-items-center">
+        <!-- Left Column -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <h1 class="display-4 fw-bold">When I'm away from my desk</h1><br>
+            <p class="lead">I enjoy spending time with my dog, Oni. <br><br>
+
+                I'm addicted to fishing, catching different types of fish as if unlocking new Pokémon.<br><br>
+                
+                I love riding my bike as a form of workout while taking in different sceneries, hiking mountains to appreciate the beauty of nature, creating art using charcoal or watercolor, and, lastly, working on DIY woodworking projects.</p>
+            
+        </div>
+
+        <!-- Right Column (Changing Image) -->
+        <div class="col-lg-6 d-flex justify-content-center">
+            <div class="image-container">
+                <img id="changingImage" src="img/about/les1.png" alt="Dynamic Image" class="img-fluid rounded shadow-sm">
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+<br><br><br>
+
+
+
+<!-- Footer -->
+<footer class="bg-light" style="background-color: #F9F9F9; padding-top: 80px; padding-bottom: 40px;">
+    <div class="container text-center">
+        <div class="d-flex justify-content-center">
+            <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+                <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+            </a>
+            <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+                <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+            </a>
+            <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+                <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+            </a>
+            <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+                <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+            </a>
+        </div>
+    </div>
+</footer>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+<!-- Scroll to Top Button -->
+
+
+<!-- LOGO CAROUSEL-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var myCarousel = new bootstrap.Carousel(document.querySelector('#moreInfoCarousel'), {
+            interval: 3000,
+            ride: 'carousel'
+        });
+    </script> 
+    
+    
+
+
+<!-- More Info -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = ["img/about/les1.png", "img/about/les2.png", "img/about/les3.png", "img/about/les4.png", "img/about/les5.png"]; // Add more images if needed
+            let currentIndex = 0;
+            const imgElement = document.getElementById("changingImage");
+            
+            setInterval(() => {
+                imgElement.classList.add("blur-transition");
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = images[currentIndex];
+                    imgElement.classList.remove("blur-transition");
+                }, 1000);
+            }, 3000);
+        });
+    </script>
+
+
+
+
+</body>
+</html>
