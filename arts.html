@@ -1,0 +1,507 @@
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traditional Art</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js" defer></script>
+
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" href="img/favicon/icon1.png">
+
+<!-- For ICO format -->
+<link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+
+<!-- For Apple Touch Icons -->
+<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+
+<!-- For Different Sizes -->
+<link rel="icon" sizes="32x32" href="img/favicon/icon1.png">
+<link rel="icon" sizes="16x16" href="img/favicon/icon2.png">
+
+ 
+    
+<style>
+   
+   .carousel-indicators {
+        position: relative;
+        margin-top: 15px; /* Adds space between the image and indicators */
+    }
+
+    .carousel-caption-container {
+        margin-top: 10px; /* Adds space between indicators and captions */
+    }
+
+    .carousel-indicators button {
+    background-color: #3C3B3B !important; /* Makes the indicators dark */
+    border: none; /* Removes any default border */
+    width: 10px; /* Adjusts the size */
+    height: 10px;
+    border-radius: 0%; /* Makes them circular */
+    opacity: 0.5; /* Slight transparency */
+}
+
+.carousel-indicators .active {
+    opacity: 1; /* Makes the active indicator fully visible */
+}
+
+
+
+
+
+/* Fullscreen Image Modal - Solid Black Background */
+.image-modal {
+    display: none; /* Ensures modal is hidden until triggered */
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black; /* Solid black background */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Ensures the image is always displayed in landscape mode */
+.modal-content {
+    width: 100vw; /* Takes full viewport width */
+    height: 100vh; /* Takes full viewport height */
+    object-fit: contain;
+    transform-origin: center;
+    position: relative; /* Ensures image does not interfere with clicks */
+    z-index: 1; /* Lower than close button */
+}
+
+/* Close Button - Now Clickable */
+.close-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 2; /* Higher than the image to stay clickable */
+}
+
+/* Force rotation when in portrait mode */
+@media (max-aspect-ratio: 1/1) {  /* Applies when height > width */
+    .modal-content {
+        transform: rotate(90deg); /* Rotates the image */
+        width: 100vh; /* Adjusts width based on rotated height */
+        height: 100vw; /* Adjusts height based on rotated width */
+    }
+
+    /* Position Close Button at the Right Bottom in Landscape Mode */
+    .close-btn {
+        transform: rotate(90deg);
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute; /* Retains original position */
+    top: 50%; /* Keeps buttons vertically centered */
+    transform: translateY(-50%); /* Ensures exact centering */
+    width: 50px;
+    height: 50px;
+    background-color: transparent !important; /* Transparent by default */
+    border-radius: 50%; /* Circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: white !important; /* Turns white on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+}
+
+.carousel-control-prev {
+    left: 10px; /* Retains original left position */
+}
+
+.carousel-control-next {
+    right: 10px; /* Retains original right position */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0.9); /* Dark arrows */
+    width: 24px;
+    height: 24px;
+}
+
+
+@media (min-width: 1025px) {  /* Applies only on laptops & desktops */
+    .carousel-item img {
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+  </style>
+  
+     
+    
+    
+    
+
+</head>
+<body>
+    
+ 
+    <nav class="navbar navbar-expand-lg bg-white fixed-top py-3">
+        <div class="container custom-container">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/logo.svg" alt="Logo" width="24" height="24" class="me-2">
+                <span>Les de Luna</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" id="menuToggle">
+    <img src="img/borger6.png" id="menuIcon" alt="Menu Icon" width="24" height="24" />
+</button>
+            
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item menu-spacing"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </nav>
+    
+    
+    
+   <!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <a class="active" href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a>
+
+
+<!-- Footer icons at the bottom of the mobile menu -->
+<div class="footer-icons">
+    <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+        <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+    </a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+        <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+    </a>
+    <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+        <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+    </a>
+    <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+        <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+    </a>
+</div>
+
+
+</div>
+
+
+
+ <!-- Fullscreen Image Modal (Hidden by Default) -->
+<div id="imageModal" class="image-modal">
+    <span class="close-btn" id="closeModal">&times; Close</span>
+    <img id="fullImage" class="modal-content">
+</div>
+
+
+
+
+   
+<!-- Hero Section -->
+
+<section class="container custom-container py-5 mt-3">
+    <a href="index.html" class="btn-link text-dark back-button"><img src="img/back-arrow.svg">&nbsp;Go back</a> <br><br>
+    <h2 class="fw-bold">Traditional Art</h2><br>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="img/artsy/photo1.jpg" alt="First slide">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/artsy/photo2.jpg" alt="Second slide">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/artsy/photo3.jpg" alt="Second slide">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/artsy/photo4.jpg" alt="Second slide">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/artsy/photo5.jpg" alt="Second slide">
+            </div>
+
+
+        </div>
+    
+        <!-- Control Buttons (Previous & Next) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+    <!-- Indicators & Captions (Placed Separately to Avoid Overlap) -->
+    <div class="text-center mt-3">
+        <!-- Indicators (Above Captions) -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    
+        <!-- Captions (Below Indicators) -->
+        <div class="carousel-caption-container mt-2">
+            <h5 id="carousel-caption-title">Mudskipper / Barlasak</h5>
+        </div>
+
+
+
+    </div>
+    
+    
+
+      
+</section>
+
+
+
+
+
+
+
+<br><br><br>
+
+
+
+<!-- Footer -->
+<footer class="bg-light" style="background-color: #F9F9F9; padding-top: 80px; padding-bottom: 40px;">
+    <div class="container text-center">
+        <div class="d-flex justify-content-center">
+            <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+                <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+            </a>
+            <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+                <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+            </a>
+            <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+                <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+            </a>
+            <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+                <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+            </a>
+        </div>
+    </div>
+</footer>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+
+
+
+
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+<!-- Scroll to Top Button -->
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const carouselInner = document.querySelector(".carousel-inner");
+    const indicatorsContainer = document.querySelector(".carousel-indicators");
+    const images = document.querySelectorAll(".carousel-item img");
+    const captions = [
+        "Mudskipper",
+        "Fiddler crab / Arais-Payapay",
+        "Leche flan",
+        "Pondering chimp",
+        "Bintol (Crab trap)"
+
+    ]; // Add more captions as needed
+
+    // Clear existing indicators
+    indicatorsContainer.innerHTML = "";
+
+    // Generate indicators dynamically
+    images.forEach((img, index) => {
+        const indicator = document.createElement("button");
+        indicator.setAttribute("type", "button");
+        indicator.setAttribute("data-bs-target", "#carouselExampleIndicators");
+        indicator.setAttribute("data-bs-slide-to", index);
+        indicator.setAttribute("aria-label", `Slide ${index + 1}`);
+
+        if (index === 0) {
+            indicator.classList.add("active");
+            indicator.setAttribute("aria-current", "true");
+        }
+
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    const captionTitle = document.getElementById("carousel-caption-title");
+    const captionText = document.getElementById("carousel-caption-text");
+
+    document.getElementById("carouselExampleIndicators").addEventListener("slid.bs.carousel", function (event) {
+        const index = event.to;
+        captionTitle.textContent = captions[index] || "Caption for Image";
+        captionText.textContent = `Short description for Image ${index + 1}`;
+    });
+});
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".carousel-item img");
+    const modal = document.getElementById("imageModal");
+    const fullImage = document.getElementById("fullImage");
+    const closeModal = document.getElementById("closeModal");
+
+    images.forEach(img => {
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            fullImage.src = this.src;
+
+            // Check if the device is in portrait mode and rotate
+            if (window.innerHeight > window.innerWidth) {
+                fullImage.style.transform = "rotate(90deg)";
+                fullImage.style.width = "100vh";  // Swap width and height
+                fullImage.style.height = "100vw";
+                closeModal.style.transform = "rotate(90deg)"; // Rotate close button
+            } else {
+                fullImage.style.transform = "none";
+                fullImage.style.width = "100vw";
+                fullImage.style.height = "100vh";
+                closeModal.style.transform = "none"; // Reset close button rotation
+            }
+        });
+    });
+
+    closeModal.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent clicks from propagating to the modal
+        modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) { // Click outside the image closes modal
+            modal.style.display = "none";
+        }
+    });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("carouselExampleIndicators");
+    let startX = 0;
+    let endX = 0;
+
+    // Detect touch start position
+    carousel.addEventListener("touchstart", function (event) {
+        startX = event.touches[0].clientX;
+    });
+
+    // Detect touch end position and determine swipe direction
+    carousel.addEventListener("touchend", function (event) {
+        endX = event.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum swipe distance to trigger action
+
+        if (startX - endX > swipeThreshold) {
+            // Swipe left → Next slide
+            document.querySelector(".carousel-control-next").click();
+        } else if (endX - startX > swipeThreshold) {
+            // Swipe right → Previous slide
+            document.querySelector(".carousel-control-prev").click();
+        }
+    }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("carouselExampleIndicators");
+    const indicators = document.querySelectorAll(".carousel-indicators button");
+
+    carousel.addEventListener("slid.bs.carousel", function (event) {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle("active", index === event.to);
+            if (index === event.to) {
+                indicator.setAttribute("aria-current", "true");
+            } else {
+                indicator.removeAttribute("aria-current");
+            }
+        });
+    });
+});
+
+
+
+    </script>
+
+</body>
+</html>
