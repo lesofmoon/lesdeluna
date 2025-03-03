@@ -410,6 +410,22 @@
                 window.scrollTo(0, scrollPosition);
             }
         });
+
+
+
+
+        
+          document.addEventListener("DOMContentLoaded", function () {
+    // Restore scroll position if available
+    if (sessionStorage.getItem("scrollPosition")) {
+        window.scrollTo(0, sessionStorage.getItem("scrollPosition"));
+    }
+
+    // Save scroll position before leaving the page
+    window.addEventListener("beforeunload", function () {
+        sessionStorage.setItem("scrollPosition", window.scrollY);
+    });
+});
     </script>
 
 
