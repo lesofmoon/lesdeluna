@@ -1,0 +1,583 @@
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WorkSpace Invaders - Les de Luna</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    
+    <style>
+        canvas {
+            background: none;
+            display: block;
+            margin: auto;
+            max-width: 100%;
+        }
+
+
+        .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        width: 300px;
+    }
+
+    .control-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 10px;
+}
+    
+.control-btn img {
+    color: #F9F9F9; 
+    width: 70%;
+    height: 70%;
+}
+
+@media (max-width: 768px) {
+    #leftButton img, 
+    #rightButton img, 
+    #shootButton img {
+        filter: brightness(0) invert(1);
+    }
+}
+
+
+
+
+
+    @media (max-width: 768px) {
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+#gameCanvasContainer {
+        position: relative;
+        width: 100%;
+        max-width: 600px; /* Adjust as needed */
+        margin: auto;
+    }
+
+    #gameCanvas {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: url('img/game/space-bg.png') no-repeat center center;
+        background-size: cover;
+    }
+
+
+    </style>
+    
+    
+    
+
+</head>
+<body>
+    
+ 
+    <nav class="navbar navbar-expand-lg bg-white fixed-top py-3">
+        <div class="container custom-container">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="img/logo.svg" alt="Logo" width="24" height="24" class="me-2">
+                <span>Les de Luna</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" id="menuToggle">
+    <img src="img/borger5.png" id="menuIcon" alt="Menu Icon" width="24" height="24" />
+</button>
+            
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item menu-spacing"><a class="nav-link active" href="haveabreak.html">Reset</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </nav>
+    
+    
+    
+   <!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <a class="active" href="home.html">Work</a>
+    <a href="contact.html">About</a>
+    <a href="about.html">Contact</a>
+    <a href="haveabreak.html">Reset</a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a>
+
+
+<!-- Footer icons at the bottom of the mobile menu -->
+<div class="footer-icons">
+    <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+        <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+    </a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+        <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+    </a>
+    <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+        <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+    </a>
+    <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+        <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+    </a>
+</div>
+
+
+</div>
+
+    
+
+
+   
+<!-- Section -->
+<section class="container custom-container py-5 mt-5 d-flex flex-column align-items-center text-center">
+
+    <!-- Align the Go Back button to the left -->
+    <div class="align-self-start">
+        <a href="haveabreak.html" class="btn-link text-dark back-button">
+            <img src="img/back-arrow.svg">&nbsp;Go back
+        </a>
+    </div> <br><br>
+    
+    <h3 class="mb-3" style="font-family:'Press Start 2P', sans-serif; color: gray;">WorkSpace Invaders</h3>
+ 
+    <div class="d-flex justify-content-center">
+
+        <div id="gameCanvasContainer">
+    <canvas id="gameCanvas"></canvas>
+</div>
+        
+    </div> <br><br>
+    <div class="d-flex justify-content-center">
+        <p class="d-none d-lg-block">⬅️ Left Arrow (Move Left), ➡️ Right Arrow (Move Right), Spacebar (Fire) 🔫</p>
+    </div>
+
+    <div id="mobileControls" class="d-lg-none mt-3 d-flex justify-content-center gap-5">
+
+        <button id="leftButton" class="control-btn">
+            <img src="img/game/left.svg" alt="Left" width="40" height="40">
+        </button>
+
+        <button id="shootButton" class="control-btn">
+            <img src="img/game/bullet2.svg" alt="Shoot" width="40" height="40">
+        </button>
+
+    </div>
+    <div class="d-lg-none mt-3 d-flex justify-content-center">
+        <button id="rightButton" class="control-btn">
+            <img src="img/game/right.svg" alt="Right" width="40" height="40">
+        </button>
+    </div>
+    
+
+</section>
+
+<div id="gameOverModal" class="modal">
+    <div class="modal-content">
+        <h3>☠️ Game Over ☠️</h3><br>
+        <button id="restartButton" class="btn btn-dark btn-lg">Restart</button>
+    </div>
+</div>
+
+
+
+<div id="congratulationsModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h4>🏆 Congratulations! 🏆</h4> 
+        <p>You have defeated all enemies!</p><br>
+        <button id="restartGameButton" class="btn btn-dark btn-lg">Restart Game</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+<audio id="game-music" loop>
+    <source src="game2.mp3" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+
+
+
+
+
+
+
+
+
+<br><br><br>
+
+
+
+<!-- Footer -->
+<footer class="bg-light" style="background-color: #F9F9F9; padding-top: 80px; padding-bottom: 40px;">
+    <div class="container text-center">
+        <div class="d-flex justify-content-center">
+            <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+                <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+            </a>
+            <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+                <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+            </a>
+            <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+                <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+            </a>
+            <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+                <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+            </a>
+        </div>
+    </div>
+</footer>
+ 
+
+
+
+
+
+
+<script>
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+const gameOverModal = document.getElementById("gameOverModal");
+const restartButton = document.getElementById("restartButton");
+
+canvas.width = 480;
+canvas.height = 600;
+
+let shipX = canvas.width / 2 - 20;
+const shipSpeed = 5;
+let bullets = [];
+let enemies = [];
+const enemyRows = 3;
+const enemyCols = 6;
+const enemyWidth = 40;
+const enemyHeight = 40;
+const spacing = 20;
+let rightPressed = false;
+let leftPressed = false;
+let shooting = false;
+let enemySpeed = 0.3;
+let gameRunning = true;
+
+// Load images for the player ship and different enemy rows
+const shipImage = new Image();
+shipImage.src = "img/game/ship.png"; // Replace with your ship image
+
+const enemyImages = [
+    new Image(),
+    new Image(),
+    new Image(),
+];
+
+enemyImages[0].src = "img/game/error1.png"; // Replace with your first enemy row image
+enemyImages[1].src = "img/game/error2.png"; // Replace with your second enemy row image
+enemyImages[2].src = "img/game/error3.png"; // Replace with your third enemy row image
+
+document.addEventListener("keydown", keyDownHandler);
+document.addEventListener("keyup", keyUpHandler);
+document.getElementById("leftButton").addEventListener("touchstart", (e) => { e.preventDefault(); leftPressed = true; });
+document.getElementById("rightButton").addEventListener("touchstart", (e) => { e.preventDefault(); rightPressed = true; });
+document.getElementById("shootButton").addEventListener("touchstart", (e) => { e.preventDefault(); shooting = true; shoot(); });
+document.addEventListener("touchend", () => { leftPressed = false; rightPressed = false; shooting = false; });
+
+restartButton.addEventListener("click", restartGame);
+
+function keyDownHandler(e) {
+    if (e.key === "ArrowRight") rightPressed = true;
+    if (e.key === "ArrowLeft") leftPressed = true;
+    if (e.key === " ") {
+        e.preventDefault();
+        if (!shooting) {
+            shooting = true;
+            shoot();
+        }
+    }
+}
+
+function keyUpHandler(e) {
+    if (e.key === "ArrowRight") rightPressed = false;
+    if (e.key === "ArrowLeft") leftPressed = false;
+    if (e.key === " ") shooting = false;
+}
+
+function shoot() {
+    let shipSize = window.innerWidth <= 768 ? 60 : 40; // Adjust for mobile vs. desktop
+    bullets.push({ x: shipX + shipSize / 2 - 2.5, y: canvas.height - shipSize - 10 });
+}
+
+
+function drawShip() {
+    let shipSize = window.innerWidth <= 768 ? 60 : 40; // Increase size for mobile
+    ctx.drawImage(shipImage, shipX, canvas.height - shipSize - 10, shipSize, shipSize);
+}
+
+
+function drawBullets() {
+    ctx.fillStyle = "red";
+    bullets.forEach((bullet, index) => {
+        bullet.y -= 5;
+        if (bullet.y < 0) {
+            bullets.splice(index, 1);
+        }
+    });
+    bullets.forEach((bullet) => {
+        ctx.fillRect(bullet.x, bullet.y, 5, 10);
+    });
+}
+
+function drawEnemies() {
+    enemies.forEach((enemy) => {
+        ctx.drawImage(enemy.image, enemy.x, enemy.y, enemyWidth, enemyHeight);
+    });
+}
+
+function updateBullets() {
+    bullets = bullets.filter((bullet) => bullet.y > 0);
+    bullets.forEach((bullet) => {
+        bullet.y -= 5;
+    });
+
+    bullets.forEach((bullet, bIndex) => {
+        enemies.forEach((enemy, eIndex) => {
+            if (
+                bullet.x > enemy.x &&
+                bullet.x < enemy.x + enemyWidth &&
+                bullet.y < enemy.y + enemyHeight &&
+                bullet.y > enemy.y
+            ) {
+                enemies.splice(eIndex, 1);
+                bullets.splice(bIndex, 1);
+            }
+        });
+    });
+}
+
+function moveShip() {
+    if (rightPressed && shipX < canvas.width - 40) shipX += shipSpeed;
+    if (leftPressed && shipX > 0) shipX -= shipSpeed;
+}
+
+function moveEnemies() {
+    enemies.forEach((enemy) => {
+        enemy.y += enemySpeed;
+        if (enemy.y + enemyHeight >= canvas.height - 50) {
+            gameOver();
+        }
+    });
+}
+
+function spawnEnemies() {
+    enemies = [];
+    const totalWidth = enemyCols * enemyWidth + (enemyCols - 1) * spacing;
+    const startX = (canvas.width - totalWidth) / 2;
+
+    for (let i = 0; i < enemyRows; i++) {
+        for (let j = 0; j < enemyCols; j++) {
+            let x = startX + j * (enemyWidth + spacing);
+            let y = i * (enemyHeight + spacing) + 20;
+            let image = enemyImages[i % enemyImages.length]; // Assign different images per row
+            enemies.push({ x, y, image });
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    gameOverModal.style.display = "none";
+});
+
+function gameOver() {
+    gameRunning = false;
+    gameOverModal.style.display = "flex";
+}
+
+function restartGame() {
+    gameOverModal.style.display = "none";
+    shipX = canvas.width / 2 - 20;
+    bullets = [];
+    enemies = [];
+    spawnEnemies();
+    gameRunning = true;
+    updateGame();
+}
+
+function updateGame() {
+    if (!gameRunning) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    moveShip();
+    moveEnemies();
+    updateBullets();
+    drawShip();
+    drawBullets();
+    drawEnemies();
+
+    requestAnimationFrame(updateGame);
+}
+
+spawnEnemies();
+updateGame();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const congratulationsModal = document.getElementById("congratulationsModal");
+const restartGameButton = document.getElementById("restartGameButton");
+
+restartGameButton.addEventListener("click", restartGame);
+
+function checkWinCondition() {
+    if (enemies.length === 0) {
+        gameRunning = false;
+        congratulationsModal.style.display = "flex";
+    }
+}
+
+function restartGame() {
+    // Hide both modals
+    gameOverModal.style.display = "none";
+    congratulationsModal.style.display = "none";
+    
+    // Reset game state
+    shipX = canvas.width / 2 - 20;
+    bullets = [];
+    enemies = [];
+    gameRunning = true;
+    
+    // Spawn new enemies
+    spawnEnemies();
+    
+    // Restart game loop
+    updateGame();
+}
+
+
+
+restartButton.addEventListener("click", restartGame);
+restartGameButton.addEventListener("click", restartGame);
+
+
+
+
+
+function updateGame() {
+    if (!gameRunning) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    moveShip();
+    moveEnemies();
+    updateBullets();
+    drawShip();
+    drawBullets();
+    drawEnemies();
+    checkWinCondition();
+
+    requestAnimationFrame(updateGame);
+}
+
+
+
+
+
+
+
+
+
+
+
+function changeCanvasBackground(imageUrl) {
+        document.getElementById("gameCanvas").style.backgroundImage = `url('${imageUrl}')`;
+    }
+
+    // Example: Change background dynamically
+    // changeCanvasBackground('img/game/new-background.jpg');
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

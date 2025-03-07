@@ -1,0 +1,280 @@
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Have a break!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    
+    
+    
+    
+    
+
+</head>
+<body>
+    
+ 
+    <nav class="navbar navbar-expand-lg bg-white fixed-top py-3">
+        <div class="container custom-container">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="img/logo.svg" alt="Logo" width="24" height="24" class="me-2">
+                <span>Les de Luna</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" id="menuToggle">
+    <img src="img/borger5.png" id="menuIcon" alt="Menu Icon" width="24" height="24" />
+</button>
+            
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item menu-spacing"><a class="nav-link active" href="haveabreak.html">Have a break!</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </nav>
+    
+    
+    
+   <!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <a href="home.html">Work</a>
+    <a href="contact.html">About</a>
+    <a href="about.html">Contact</a>
+    <a class="active" href="haveabreak.html">Have a break!</a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a>
+
+
+<!-- Footer icons at the bottom of the mobile menu -->
+<div class="footer-icons">
+    <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+        <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+    </a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+        <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+    </a>
+    <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+        <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+    </a>
+    <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+        <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+    </a>
+</div>
+
+
+</div>
+
+    
+
+
+   
+<!-- Section -->
+<section class="container custom-container py-5 mt-5"><br>
+    <!-- Align the Go Back button to the left -->
+    <div class="align-self-start">
+        <a href="haveabreak.html" class="btn-link text-dark back-button">
+            <img src="img/back-arrow.svg">&nbsp;Go back
+        </a>
+    </div> <br><br>
+    <h3 class="text-center" style="font-family:'Press Start 2P', sans-serif; color: grey;">Hex Color Guessing Game</h3><br><br>
+    <div id="game-container" class="text-center">
+        <h4 id="level-title" class="fw-bold">Level 1</h4> <br>
+        <p>Guess the correct color based on the hex code:</p>
+        <h3 id="hex-code" class="fw-bold"></h3>
+        <div id="color-options" class="d-flex justify-content-center flex-wrap"></div>
+        <p id="feedback" class="mt-3"></p><br>
+        <div id="lives" class="mt-3">❤️❤️❤️</div>
+    </div>
+    <div id="game-end" class="text-center d-none">
+        <h2>Congratulations! You've completed all 10 levels!</h2>
+        <button id="restart-game" class="btn btn-primary mt-3">Restart Game</button>
+    </div>
+</section>
+
+<audio id="game-music" loop>
+    <source src="game2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+
+
+
+<!-- Footer -->
+<footer class="bg-light" style="background-color: #F9F9F9; padding-top: 80px; padding-bottom: 40px;">
+    <div class="container text-center">
+        <div class="d-flex justify-content-center">
+            <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+                <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+            </a>
+            <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+                <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+            </a>
+            <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+                <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+            </a>
+            <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+                <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+            </a>
+        </div>
+    </div>
+</footer>
+ 
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const gameContainer = document.getElementById("game-container");
+        const gameEnd = document.getElementById("game-end");
+        const hexCodeElement = document.getElementById("hex-code");
+        const colorOptions = document.getElementById("color-options");
+        const feedback = document.getElementById("feedback");
+        const restartButton = document.getElementById("restart-game");
+        const livesElement = document.getElementById("lives");
+        const levelTitle = document.getElementById("level-title");
+        const gameMusic = document.getElementById("game-music");
+
+        let level = 1;
+        let maxLevels = 10;
+        let correctColor = "";
+        let lives = 3;
+
+        function generateColorOptions(level) {
+            colorOptions.innerHTML = "";
+            levelTitle.textContent = "Level " + level;
+            let colors = [];
+            for (let i = 0; i < 3 + Math.min(level, 7); i++) {
+                colors.push(randomHexColor());
+            }
+            correctColor = colors[Math.floor(Math.random() * colors.length)];
+            hexCodeElement.textContent = correctColor;
+            colors.sort(() => 0.5 - Math.random());
+            colors.forEach(color => {
+                const btn = document.createElement("button");
+                btn.style.backgroundColor = color;
+                btn.classList.add("btn", "m-2");
+                btn.style.width = "80px";
+                btn.style.height = "80px";
+                btn.onclick = () => checkAnswer(color);
+                colorOptions.appendChild(btn);
+            });
+        }
+
+        function randomHexColor() {
+            return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+        }
+
+        function checkAnswer(selectedColor) {
+            if (selectedColor === correctColor) {
+                feedback.textContent = "Correct! Moving to level " + (level + 1);
+                level++;
+                if (level > maxLevels) {
+                    gameContainer.classList.add("d-none");
+                    gameEnd.classList.remove("d-none");
+                } else {
+                    setTimeout(() => {
+                        feedback.textContent = "";
+                        generateColorOptions(level);
+                    }, 1000);
+                }
+            } else {
+                lives--;
+                updateLives();
+                if (lives === 0) {
+                    feedback.textContent = "You lost all lives! Restarting from Level 1.";
+                    setTimeout(() => restartGame(), 2000);
+                } else {
+                    feedback.textContent = "Wrong! Try again.";
+                }
+            }
+        }
+
+        function updateLives() {
+            livesElement.innerHTML = "❤️".repeat(lives) + "💔".repeat(3 - lives);
+        }
+
+        function restartGame() {
+            level = 1;
+            lives = 3;
+            gameContainer.classList.remove("d-none");
+            gameEnd.classList.add("d-none");
+            feedback.textContent = "";
+            updateLives();
+            generateColorOptions(level);
+        }
+
+        restartButton.addEventListener("click", restartGame);
+        generateColorOptions(level);
+        updateLives();
+        
+
+        function playMusic() {
+            gameMusic.play().catch(error => console.error("Audio play failed:", error));
+            document.removeEventListener("click", playMusic);
+        }
+        document.addEventListener("click", playMusic);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Font Wizard - Les de Luna</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:wght@400;700&family=Comic+Neue:wght@300;400;700&family=Creepster&family=Honk&family=Lobster+Two:wght@400;700&family=Pacifico&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+    
+    <style>
+     #font-display {
+    font-family: inherit;
+}
+
+
+
+
+
+#font-display {
+    font-size: 36px;
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    border: 2px solid gray;
+    overflow: visible;
+}
+
+.star {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: sparkle 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes sparkle {
+    0% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+    100% { opacity: 0.5; transform: scale(1); }
+}
+
+
+
+
+
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color, red);
+    border-radius: 50%;
+    opacity: 1;
+    animation: pop 1s ease-out forwards;
+}
+
+@keyframes pop {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px) scale(0);
+        opacity: 0;
+    }
+}
+
+    </style>
+    
+    
+    
+    
+
+</head>
+<body>
+    
+ 
+    <nav class="navbar navbar-expand-lg bg-white fixed-top py-3">
+        <div class="container custom-container">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="img/logo.svg" alt="Logo" width="24" height="24" class="me-2">
+                <span>Les de Luna</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" id="menuToggle">
+    <img src="img/borger6.png" id="menuIcon" alt="Menu Icon" width="24" height="24" />
+</button>
+            
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item menu-spacing"><a class="nav-link active" href="contact.html">Reset</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </nav>
+    
+    
+    
+   <!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <a href="home.html">Work</a>
+    <a href="contact.html">About</a>
+    <a href="about.html">Contact</a>
+    <a class="active" href="haveabreak.html">Reset</a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank">LinkedIn</a>
+
+
+<!-- Footer icons at the bottom of the mobile menu -->
+<div class="footer-icons">
+    <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+        <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+    </a>
+    <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+        <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+    </a>
+    <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+        <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+    </a>
+    <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+        <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+    </a>
+</div>
+
+
+</div>
+
+    
+<br>
+
+<!-- Section -->
+<section class="container custom-container py-5 mt-5 d-flex flex-column align-items-center text-center">
+    <div class="align-self-start">
+        <a href="haveabreak.html" class="btn-link text-dark back-button">
+            <img src="img/back-arrow.svg">&nbsp;Go back
+        </a>
+    </div>
+    <br><br>
+    
+    <h3 class="mb-3" style="font-family:'Press Start 2P', sans-serif; color: gray;">Font Wizard</h3>
+    
+    <p id="level-display" class="fw-bold">Level 1 of 12</p><br><br>
+    <div id="font-display" class="p-3 border" style="font-size: 36px;">I’m not lazy, I’m on energy-saving mode.</div>
+    
+    <div class="mt-3">
+        <button class="btn btn-outline-dark m-2" onclick="checkAnswer(this)"></button>
+        <button class="btn btn-outline-dark m-2" onclick="checkAnswer(this)"></button>
+        <button class="btn btn-outline-dark m-2" onclick="checkAnswer(this)"></button>
+        <button class="btn btn-outline-dark m-2" onclick="checkAnswer(this)"></button>
+    </div>
+    
+    <p id="message" class="mt-2" style="display: none; font-weight: bold;"></p>
+    <button id="continue-button" class="btn btn-dark mt-3" style="display: none;" onclick="nextLevel()">Continue</button>
+</section>
+
+<!-- Congratulations Modal -->
+<div class="modal fade" id="congratulationsModal" tabindex="-1" aria-labelledby="congratulationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title" id="congratulationsModalLabel">🏆 Congratulations! 🏆</h5>
+            </div>
+            <div class="modal-body text-center">
+                <p id="completion-message" class="fw-bold"></p>
+                <p id="score-display" class="fw-bold"></p>
+                <button class="btn btn-dark btn-md" onclick="restartGame()">Restart</button> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<br><br><br><br><br><br>
+
+
+
+<!-- Footer -->
+<footer class="bg-light" style="background-color: #F9F9F9; padding-top: 80px; padding-bottom: 40px;">
+    <div class="container text-center">
+        <div class="d-flex justify-content-center">
+            <a href="mailto:deluna.lester@gmail.com" class="mx-3">
+                <img src="img/footer/email.svg" alt="Icon 1" width="24" height="24">
+            </a>
+            <a href="https://www.linkedin.com/in/lesterdeluna/" target="_blank" class="mx-3">
+                <img src="img/footer/linkedin.svg" alt="Icon 2" width="24" height="24">
+            </a>
+            <a href="https://dribbble.com/lesdeluna/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share&utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22lesdeluna%22&utm_content=%22About%20lesdeluna%22&utm_medium=Social_Share" target="_blank" class="mx-3">
+                <img src="img/footer/dribble.svg" alt="Icon 3" width="24" height="24">
+            </a>
+            <a href="https://www.tiktok.com/@outdoorsieph" target="_blank" class="mx-3">
+                <img src="img/footer/tiktok.svg" alt="Icon 4" width="24" height="24">
+            </a>
+        </div>
+    </div>
+</footer>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    const fonts = [
+        'Times New Roman', 'Courier', 'Georgia', 'Tahoma', 'Bebas Neue', 'Pacifico', 'Bodoni Moda', 'Comic Neue', 'Creepster', 'Lobster Two', 'Honk', 'Tangerine'
+    ];
+    const randomFonts = ['Arial', 'Cooper', 'Inter', 'Roboto', 'Helvetica', 'Papyrus', 'Trebuchet MS', 'Verdana', 'Dingbats', 'Webdings', 'Poppins', 'Karla', 'Alibata', 'Myriad', 'Avenir', 'Futura'];
+    let correctFont;
+    let level = 1;
+    let correctGuesses = 0;
+    const maxLevels = 12;
+    
+    function loadGame() {
+        if (level > maxLevels) {
+            let message;
+            if (correctGuesses <= 2) message = "You have completed all 12 levels. Nice try!";
+            else if (correctGuesses <= 5) message = "You have completed all 12 levels. You're getting there!";
+            else if (correctGuesses <= 8) message = "You have completed all 12 levels. Nice work!";
+            else if (correctGuesses <= 11) message = "You have completed all 12 levels. So close to perfection!";
+            else message = "You have completed all 12 levels. Absolute legend!";
+            
+            document.getElementById("completion-message").textContent = message;
+            document.getElementById("score-display").textContent = `${correctGuesses}/${maxLevels} identified!`;
+            new bootstrap.Modal(document.getElementById('congratulationsModal')).show();
+            return;
+        }
+        
+        document.getElementById("level-display").textContent = `Level ${level} of ${maxLevels}`;
+        document.getElementById("message").style.display = "none";
+        document.getElementById("continue-button").style.display = "none";
+        
+        const display = document.getElementById("font-display");
+        const buttons = document.querySelectorAll("button.btn-outline-dark");
+        
+        correctFont = fonts[level - 1];
+        display.style.fontFamily = `'${correctFont}', sans-serif`;
+        
+        let shuffledFonts = [correctFont, ...randomFonts.sort(() => 0.5 - Math.random()).slice(0, 3)];
+        shuffledFonts = shuffledFonts.sort(() => 0.5 - Math.random());
+        
+        buttons.forEach((button, index) => {
+            button.textContent = shuffledFonts[index];
+            button.dataset.font = shuffledFonts[index];
+            button.disabled = false;
+            button.style.border = "";
+        });
+    }
+
+
+
+    
+    function checkAnswer(button) {
+    const message = document.getElementById("message");
+    const continueButton = document.getElementById("continue-button");
+    const buttons = document.querySelectorAll("button.btn-outline-dark");
+
+    if (button.dataset.font === correctFont) {
+        correctGuesses++;
+        message.textContent = "Correct!";
+        message.style.color = "green";
+        button.style.border = "3px solid green";
+
+
+
+
+        
+        // Trigger confetti effect
+        createConfetti();
+    } else {
+        message.innerHTML = `<span style='color: red;'>Incorrect!</span> <span style='color: #3C3B3B; font-weight: lighter;'>The correct font was: <span style='font-weight: bold;'>${correctFont}.</span></span>`;
+        button.style.border = "3px solid red";
+
+        buttons.forEach(btn => {
+            if (btn.dataset.font === correctFont) {
+                btn.style.border = "3px solid green";
+            }
+        });
+    }
+
+    message.style.display = "block";
+    continueButton.style.display = "block";
+    buttons.forEach(btn => btn.disabled = true);
+}
+
+function createConfetti() {
+    const display = document.getElementById("font-display");
+    const numConfetti = 10;
+    const colors = ["#ff4d4d", "#ffcc00", "#66ff66", "#3399ff", "#ff66b2"];
+
+    for (let i = 0; i < numConfetti; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.setProperty("--color", colors[Math.floor(Math.random() * colors.length)]);
+
+        let x = Math.random() * display.offsetWidth;
+        confetti.style.left = `${x}px`;
+        confetti.style.top = `-10px`;
+
+        display.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 1000);
+    }
+}
+
+
+
+
+
+    
+    function nextLevel() {
+        level++;
+        loadGame();
+    }
+    
+    function restartGame() {
+        level = 1;
+        correctGuesses = 0;
+        loadGame();
+        let congratsModal = bootstrap.Modal.getInstance(document.getElementById('congratulationsModal'));
+        if (congratsModal) congratsModal.hide();
+    }
+    
+    window.onload = loadGame;
+
+
+
+
+
+
+
+
+
+
+
+    display.style.fontFamily = `'${correctFont}', sans-serif`;
+
+
+
+
+
+    function createStars() {
+    const display = document.getElementById("font-display");
+    const rect = display.getBoundingClientRect(); // Get position and size
+    const numStars = 15; // Adjust the number of stars
+
+    for (let i = 0; i < numStars; i++) {
+        let star = document.createElement("div");
+        star.classList.add("star");
+
+        let position = Math.random();
+        let x, y;
+
+        if (position < 0.25) {
+            // Top border
+            x = Math.random() * rect.width;
+            y = -10;
+        } else if (position < 0.5) {
+            // Right border
+            x = rect.width;
+            y = Math.random() * rect.height;
+        } else if (position < 0.75) {
+            // Bottom border
+            x = Math.random() * rect.width;
+            y = rect.height;
+        } else {
+            // Left border
+            x = -10;
+            y = Math.random() * rect.height;
+        }
+
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+
+        display.appendChild(star);
+        animateStar(star);
+    }
+}
+
+function animateStar(star) {
+    setInterval(() => {
+        let xMove = (Math.random() - 0.5) * 10; // Small movement
+        let yMove = (Math.random() - 0.5) * 10;
+        star.style.transform = `translate(${xMove}px, ${yMove}px)`;
+    }, 1000);
+}
+
+window.onload = createStars;
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
